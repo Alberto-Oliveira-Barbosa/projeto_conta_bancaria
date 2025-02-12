@@ -1,17 +1,20 @@
 def get_menu():
     import time
-    time.sleep(2)
+    time.sleep(1)
 
     menu = """
 
-    Gerenciamento da conta
+    ==============================
+        Gerenciamento da conta    
+    ==============================
     [d] Depositar
     [s] Sacar
     [e] Extrato
     
-    ===============================
 
-    Manutenção de contas
+    ==============================
+         Manutenção de contas     
+    ==============================
     [u] Cadastrar novo usuário
     [c] Cadastrar nova conta
     [l] Listar contas cadastradas
@@ -120,6 +123,22 @@ def criar_conta(AGENCIA, total_contas,contas, usuarios):
     print('Conta gerada com sucesso!')
     return total_contas
 
+def listar_contas(contas):
+    if len(contas) == 0:
+        print('Nenhuma conta cadastrada no momento')
+        return
+
+    print("\t==============================")
+    print("\t        LISTAR CONTAS         ")
+    print("\t==============================")
+    for i in contas:
+        print(f'\tAgência: {i['agencia']}')
+        print(f'\tConta: {i['numero_conta']}')
+        print(f'\tTitular: {i['usuario']['usuario']}')
+        print('')
+
+    print("\t==============================")
+    
 
 def main():
     saldo = 0
@@ -148,6 +167,8 @@ def main():
                 criar_usuario(usuarios)
             case 'c':
                 total_contas = criar_conta(AGENCIA, total_contas,contas, usuarios)
+            case 'l':
+                listar_contas(contas)
             case 'q':
                 break
             case _:
