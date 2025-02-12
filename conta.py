@@ -1,4 +1,6 @@
 def get_menu():
+    import time
+    time.sleep(2)
 
     menu = """
 
@@ -102,6 +104,22 @@ def criar_usuario(usuarios):
 
     print(f'Usuário: {nome} criado com sucesso!')
 
+def criar_conta(AGENCIA, total_contas,contas, usuarios):
+    cpf = __get_cpf()
+    usuario = __get_usuario(cpf, usuarios)
+    if usuario is None:
+        print('Usuário não encontrado! Por favor cadastre um usuário antes de gerar uma conta!')
+        return total_contas
+
+    contas.append({
+        'agencia': AGENCIA,
+        'numero_conta': total_contas,
+        'usuario': usuario
+    })
+    total_contas += 1
+    print('Conta gerada com sucesso!')
+    return total_contas
+
 
 def main():
     saldo = 0
@@ -128,6 +146,8 @@ def main():
                 get_extrato(saldo, extrato=extrato)
             case 'u':
                 criar_usuario(usuarios)
+            case 'c':
+                total_contas = criar_conta(AGENCIA, total_contas,contas, usuarios)
             case 'q':
                 break
             case _:
