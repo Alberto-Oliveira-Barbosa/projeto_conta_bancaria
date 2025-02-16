@@ -94,7 +94,6 @@ def listar_contas(contas):
     print("\t==============================")
     for conta in contas:
         print(conta)
-        print('')
     print("\t==============================")
     
 
@@ -108,7 +107,6 @@ def listar_clientes(lista_clientes):
     print("\t==============================")
     for cliente in lista_clientes:
         print(cliente)
-        print('')
     print("\t==============================")
     
 
