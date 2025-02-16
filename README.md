@@ -2,7 +2,7 @@
 
 ### Descrição
 
-Aplicação de conta bancária para praticar conceitos de programação.
+Simulação de uma conta bancária para a prática de conceitos de programação.
 
 ### Tecnologias usadas
 - Python
@@ -25,3 +25,23 @@ Para facilitar o entendimento da evolução dos exercícios, o projeto foi divid
         - **criar usuário**--> Armazenar em uma lista, ele deve possuir os atributos: *nome*, *data de nascimento*, *cpf* e *endereço*. Não pode ser cadastrado dois usuários para o mesmo cpf.
         - **criar conta**--> Armazenar a conta em uma lista, ela deve possuir *agência*, *número da conta* e *usuário*.O número da conta deve ser sequencial, iniciando em 1, a agência deve ser fixa com o valor "0001" e um usuário pode ter mais de uma conta, mas uma conta só pode pertencer a um usuário.
         - **listar contas**--> Implementar uma listagem das contas criadas.
+- **v3** --> Aplicação de orientação a objetos para o projeto.
+
+### Organização da estrutura do projeto:
+- **app.py** --> Arquivo principal que inicializa a execução do projeto.
+- **src/classes** --> Diretório com as classes do projeto.
+- **src/utils** --> Diretório com ferramentas usadas pelas classes.
+
+### Modo de usar:
+Clonar o projeto com o comando:
+```shell
+git@github.com:Alberto-Oliveira-Barbosa/projeto_conta_bancaria.git
+```
+Mudar para a pasta *projeto_conta_bancaria* com o comando:
+```shell
+cd projeto_conta_bancaria
+```
+Ativar o projeto com o comando:
+```shell
+python app.py
+```
